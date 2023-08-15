@@ -2,7 +2,7 @@
 ## subtitulo
 ### subsubtitulo
 1. **Negrita**
-2. **YUCA**
+2. *Cursiva*
 3. ***Negrita cursiva***
 
 | Columna 1 | Columna 2 |
