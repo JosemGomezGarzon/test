@@ -1,4 +1,3 @@
-
 public class Automovil {
     enum tipoMarca {KIA, HONDA, BMW, AUDI, MAZDA, CHEVROLET};
     tipoMarca marca;
@@ -19,7 +18,7 @@ public class Automovil {
     int multas = 0;
 
     Automovil( Automovil.tipoMarca marca, tipoTransmision transmision, int modelo, TipoCombustible tipoCombustible, TipoAutomovil tipoAutomovil,
-              int numeroPuertas, int cantidadAsientos, int velocidadMaxima, TipoColor color) {
+            int numeroPuertas, int cantidadAsientos, int velocidadMaxima, TipoColor color) {
         this.marca = marca;
         this.transmision = transmision;
         this.modelo = modelo;
@@ -180,10 +179,6 @@ public class Automovil {
         velocidadActual = 0;
     }
 
-    double calcularTiempoLlegada(int distancia) {
-        return distancia / velocidadActual;
-    }
-
     void imprimir() {
         System.out.println("Marca = " + marca);
         System.out.println("Tipo Transmision = " + transmision);
@@ -201,7 +196,7 @@ public class Automovil {
     }
 
     int valorTotalMultas() {
-        return multas * 100; // Valor arbitrario de multa
+        return multas * 180; // Valor arbitrario de multa
     }
 
     private void generarMulta() {
@@ -210,22 +205,20 @@ public class Automovil {
 
     public static void main(String[] args) {
 
-        Automovil auto1 = new Automovil(tipoMarca.CHEVROLET, tipoTransmision.MANUAL, 2018, TipoCombustible.DIESEL, TipoAutomovil.EJECUTIVO,5, 6,250, TipoColor.NEGRO);
+        Automovil auto1 = new Automovil(tipoMarca.CHEVROLET, tipoTransmision.MANUAL, 2018, TipoCombustible.DIESEL, TipoAutomovil.EJECUTIVO,5, 6,150, TipoColor.NEGRO);
 
         auto1.imprimir();
         auto1.setVelocidadActual(100);
         System.out.println("Velocidad actual = " + auto1.velocidadActual);
-        auto1.acelerar(20);
+        auto1.acelerar(0);
         System.out.println("Velocidad actual = " + auto1.velocidadActual);
-        auto1.desacelerar(50);
+        auto1.desacelerar(0);
         System.out.println("Velocidad actual = " + auto1.velocidadActual);
         auto1.frenar();
         System.out.println("Velocidad actual = " + auto1.velocidadActual);
-        auto1.desacelerar(20);
 
-        System.out.println("Tiene multas: " + auto1.tieneMultas());
-        System.out.println("Valor total de multas: $" + auto1.valorTotalMultas());
-
+            System.out.println("Tiene multas: " + auto1.tieneMultas()); 
+            System.out.println("Valor total de multas: $" + auto1.valorTotalMultas());
         
     }
 
